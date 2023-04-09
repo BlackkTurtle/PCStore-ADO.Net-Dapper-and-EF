@@ -1,0 +1,14 @@
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\PCStoreEF\obj\Debug\net6.0\PCStoreEF.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\PCStoreEF\obj\Debug\net6.0\PCStoreEF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\PCStoreEF\obj\Debug\net6.0\PCStoreEF.AssemblyInfoInputs.cache
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\PCStoreEF\obj\Debug\net6.0\PCStoreEF.AssemblyInfo.cs
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\PCStoreEF\obj\Debug\net6.0\PCStoreEF.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\PCStoreEF\bin\Debug\net6.0\PCStoreEF.deps.json
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\PCStoreEF\bin\Debug\net6.0\PCStoreEF.runtimeconfig.json
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\PCStoreEF\bin\Debug\net6.0\PCStoreEF.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\PCStoreEF\bin\Debug\net6.0\PCStoreEF.pdb
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\PCStoreEF\obj\Debug\net6.0\PCStoreEF.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\PCStoreEF\obj\Debug\net6.0\refint\PCStoreEF.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\PCStoreEF\obj\Debug\net6.0\PCStoreEF.pdb
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\PCStoreEF\obj\Debug\net6.0\PCStoreEF.genruntimeconfig.cache
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\PCStoreEF\obj\Debug\net6.0\ref\PCStoreEF.dll

@@ -91,12 +91,11 @@ namespace PCStore.API.Controllers
                 }
                 var user = new User()
                 {
-                    Password = fulluser.Password,
                     Email = fulluser.Email,
                     FirstName = fulluser.FirstName,
                     LastName=fulluser.LastName,
                     Father = fulluser.Father,
-                    Phone = fulluser.Phone
+                    PhoneNumber = fulluser.PhoneNumber
                 };
                 _EFuow.eFUsersRepository.AddAsync(user);
                 await _EFuow.SaveChangesAsync();
@@ -127,11 +126,10 @@ namespace PCStore.API.Controllers
                     _logger.LogInformation($"User with ID: {id} was not found in the database");
                     return NotFound();
                 }
-                UserEntity.Password = updatedUser.Password;
                 UserEntity.FirstName = updatedUser.FirstName;
                 UserEntity.LastName = updatedUser.LastName;
                 UserEntity.Father = updatedUser.Father;
-                UserEntity.Phone = updatedUser.Phone;
+                UserEntity.PhoneNumber = updatedUser.PhoneNumber;
                 UserEntity.Email = updatedUser.Email;
 
                 await _EFuow.SaveChangesAsync();

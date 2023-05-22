@@ -69,7 +69,7 @@ namespace PCStore.API.Controllers
                     CommentDate = DateTime.Now,
                     Comment1 =fullcomment.Comment1
                 };
-                _EFuow.eFCommentsRepository.AddAsync(comment);
+                await _EFuow.eFCommentsRepository.AddAsync(comment);
                 await _EFuow.SaveChangesAsync();
                 return StatusCode(StatusCodes.Status201Created);
             }

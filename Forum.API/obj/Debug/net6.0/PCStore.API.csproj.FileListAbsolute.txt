@@ -95,3 +95,8 @@ C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2
 C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\Forum.API\bin\Debug\net6.0\PCStoreBLL.exe
 C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\Forum.API\bin\Debug\net6.0\PCStoreBLL.pdb
 C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\Forum.API\bin\Debug\net6.0\PCStoreBLL.exe.config
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\Forum.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\Forum.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\Forum.API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\Forum.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\Forum.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

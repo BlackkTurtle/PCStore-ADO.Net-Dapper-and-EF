@@ -21,7 +21,7 @@ public class EFUsersRepository : EFGenericRepository<User>, IEFUsersRepository
 
     public async Task<User> GetUserByPhoneAsync(string Phone)
     {
-        return await databaseContext.Users.SingleOrDefaultAsync(v => v.Phone == Phone)
+        return await databaseContext.Users.SingleOrDefaultAsync(v => v.PhoneNumber == Phone)
             ?? throw new Exception($"Couldn't retrieve entities Users");
     }
 

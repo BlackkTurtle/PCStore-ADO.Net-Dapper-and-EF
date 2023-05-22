@@ -85,3 +85,15 @@ C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2
 C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\EF PCStore.API\obj\Debug\net6.0\ref\EF PCStore.API.dll
 C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\EF PCStore.API\bin\Debug\net6.0\PCStoreEF.BLL.dll
 C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\EF PCStore.API\bin\Debug\net6.0\PCStoreEF.BLL.pdb
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\EF PCStore.API\bin\Debug\net6.0\Humanizer.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\EF PCStore.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\EF PCStore.API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\EF PCStore.API\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\EF PCStore.API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\EF PCStore.API\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\EF PCStore.API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\EF PCStore.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\EF PCStore.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\EF PCStore.API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\EF PCStore.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\user\OneDrive\Рабочий стол\ІФТКН\2 курс\C#\Proekt 2 semestr\EF PCStore.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

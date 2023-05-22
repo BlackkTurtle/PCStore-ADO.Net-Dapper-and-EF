@@ -1,10 +1,12 @@
 using System.Data;
 using System.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using PCStoreEF.BLL.EFRepositories;
 using PCStoreEF.BLL.EFRepositories.Contracts;
 using PCStoreEF.DbContexts;
 using PCStoreEF.EFRepositories;
 using PCStoreEF.EFRepositories.Contracts;
+using PCStoreEF.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +14,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 // Connection/Transaction for ADO.NET/DAPPER database
-builder.Services.AddScoped((s) => new SqlConnection(builder.Configuration.GetConnectionString("MSSQLConnection")));
+/*builder.Services.AddScoped((s) => new SqlConnection(builder.Configuration.GetConnectionString("MSSQLConnection")));
 builder.Services.AddScoped<IDbTransaction>(s =>
 {
     SqlConnection conn = s.GetRequiredService<SqlConnection>();
@@ -22,7 +24,21 @@ builder.Services.AddScoped<IDbTransaction>(s =>
 builder.Services.AddDbContext<PCStoreDbContext>(options =>
 {
     string connectionString = builder.Configuration.GetConnectionString("MSSQLConnection");
-    //options.UseSqlServer(connectionString);
+    options.UseSqlServer(connectionString,b=>b.MigrationsAssembly("EF PCStore.API"));
+});*/
+builder.Services.AddDbContext<PCStoreDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MSSQLConnection"), b => b.MigrationsAssembly("EF PCStore.API"))).AddIdentity<User, Role>(config =>
+{
+    config.Password.RequireNonAlphanumeric = false;
+    config.Password.RequireDigit = false;
+    config.Password.RequiredLength = 6;
+    config.Password.RequireLowercase = false;
+    config.Password.RequireUppercase = false;
+})
+    .AddEntityFrameworkStores<PCStoreDbContext>();
+
+builder.Services.ConfigureApplicationCookie(config => {
+    config.LoginPath = "/Admin/Login";
+    config.AccessDeniedPath = "/Admin/AccessDenied";
 });
 
 builder.Services.AddScoped<IEFTypesRepository, EFTypesRepository>();

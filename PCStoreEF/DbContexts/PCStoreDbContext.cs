@@ -148,7 +148,6 @@ namespace PCStoreEF.DbContexts
 
                 entity.HasIndex(e => e.Email, "UQ__Users__A9D105349C8F07FF").IsUnique();
 
-                entity.Property(e => e.Id).HasColumnName("Id");
                 entity.Property(e => e.Email).HasMaxLength(30);
                 entity.Property(e => e.Father).HasMaxLength(30);
                 entity.Property(e => e.FirstName).HasMaxLength(30);

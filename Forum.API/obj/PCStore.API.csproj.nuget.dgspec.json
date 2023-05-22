@@ -87,22 +87,11 @@
         "projectUniqueName": "C:\\Users\\user\\OneDrive\\Рабочий стол\\ІФТКН\\2 курс\\C#\\Proekt 2 semestr\\Forum.DAL\\PCStore.DAL.csproj",
         "projectName": "PCStore.DAL",
         "projectPath": "C:\\Users\\user\\OneDrive\\Рабочий стол\\ІФТКН\\2 курс\\C#\\Proekt 2 semestr\\Forum.DAL\\PCStore.DAL.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "projectStyle": "PackagesConfig",
-        "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
         "frameworks": {
           "net472": {
             "projectReferences": {}
           }
-        },
-        "packagesConfigPath": "C:\\Users\\user\\OneDrive\\Рабочий стол\\ІФТКН\\2 курс\\C#\\Proekt 2 semestr\\Forum.DAL\\packages.config"
+        }
       },
       "frameworks": {
         "net472": {}
@@ -113,22 +102,11 @@
         "projectUniqueName": "C:\\Users\\user\\OneDrive\\Рабочий стол\\ІФТКН\\2 курс\\C#\\Proekt 2 semestr\\PCStoreBLL\\PCStoreBLL.csproj",
         "projectName": "PCStoreBLL",
         "projectPath": "C:\\Users\\user\\OneDrive\\Рабочий стол\\ІФТКН\\2 курс\\C#\\Proekt 2 semestr\\PCStoreBLL\\PCStoreBLL.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "projectStyle": "PackagesConfig",
-        "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
         "frameworks": {
           "net472": {
             "projectReferences": {}
           }
-        },
-        "packagesConfigPath": "C:\\Users\\user\\OneDrive\\Рабочий стол\\ІФТКН\\2 курс\\C#\\Proekt 2 semestr\\PCStoreBLL\\packages.config"
+        }
       },
       "frameworks": {
         "net472": {}

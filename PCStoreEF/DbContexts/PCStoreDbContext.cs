@@ -1,5 +1,6 @@
 ﻿
 using System.Drawing.Drawing2D;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using PCStoreEF.Entities; 
@@ -28,8 +29,6 @@ namespace PCStoreEF.DbContexts
         public virtual DbSet<Status> Statuses { get; set; }
 
         public virtual DbSet<Types> Types { get; set; }
-
-        public virtual DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.UseSqlServer("Data Source=DESKTOP-Q05O5DB;Initial Catalog=PCStoreEF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
@@ -148,12 +147,16 @@ namespace PCStoreEF.DbContexts
 
                 entity.HasIndex(e => e.Email, "UQ__Users__A9D105349C8F07FF").IsUnique();
 
+                entity.Property(e => e.UserName).HasMaxLength(50);
                 entity.Property(e => e.Email).HasMaxLength(30);
                 entity.Property(e => e.Father).HasMaxLength(30);
                 entity.Property(e => e.FirstName).HasMaxLength(30);
                 entity.Property(e => e.LastName).HasMaxLength(30);
                 entity.Property(e => e.PhoneNumber).HasMaxLength(13);
             });
+            modelBuilder.Entity<IdentityUserLogin<int>>().HasNoKey();
+            modelBuilder.Entity<IdentityUserRole<int>>().HasNoKey();
+            modelBuilder.Entity<IdentityUserToken<int>>().HasNoKey();
 
             OnModelCreatingPartial(modelBuilder);
         }

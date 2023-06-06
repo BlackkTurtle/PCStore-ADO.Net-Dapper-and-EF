@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Vd8rc7u7b2DYZ09Lq/dK/88IQMhkWsZvlW5PdkrzFQcsLtynVRs7jaYLcoUWUf0TzeIB6QH4CzDW4bkkLUy3wQ==",
+  "dgSpecHash": "8WtgUILAclbyfkgeKJ+JVaT7qqZVftVUPyH7gJHQPp/Pq7YoUydBDMioSySUTIUK1ZXGTpIzXhqn5o0DpTAZng==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\OneDrive\\Рабочий стол\\ІФТКН\\2 курс\\C#\\Proekt 2 semestr\\PCStoreEF.BLL\\PCStoreEF.BLL.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.16\\microsoft.aspnetcore.authentication.jwtbearer.6.0.16.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.16\\microsoft.aspnetcore.cryptography.internal.6.0.16.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.16\\microsoft.aspnetcore.cryptography.keyderivation.6.0.16.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.dataprotection\\2.2.0\\microsoft.aspnetcore.dataprotection.2.2.0.nupkg.sha512",

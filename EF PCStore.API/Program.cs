@@ -1,6 +1,10 @@
 using System.Data;
 using System.Data.SqlClient;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using PCStoreEF.BLL.EFRepositories;
 using PCStoreEF.BLL.EFRepositories.Contracts;
 using PCStoreEF.DbContexts;
@@ -13,19 +17,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-// Connection/Transaction for ADO.NET/DAPPER database
-/*builder.Services.AddScoped((s) => new SqlConnection(builder.Configuration.GetConnectionString("MSSQLConnection")));
-builder.Services.AddScoped<IDbTransaction>(s =>
-{
-    SqlConnection conn = s.GetRequiredService<SqlConnection>();
-    conn.Open();
-    return conn.BeginTransaction();
-});
-builder.Services.AddDbContext<PCStoreDbContext>(options =>
-{
-    string connectionString = builder.Configuration.GetConnectionString("MSSQLConnection");
-    options.UseSqlServer(connectionString,b=>b.MigrationsAssembly("EF PCStore.API"));
-});*/
+
 builder.Services.AddDbContext<PCStoreDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MSSQLConnection"), b => b.MigrationsAssembly("EF PCStore.API"))).AddIdentity<User, Role>(config =>
 {
     config.Password.RequireNonAlphanumeric = false;
@@ -34,7 +26,27 @@ builder.Services.AddDbContext<PCStoreDbContext>(options => options.UseSqlServer(
     config.Password.RequireLowercase = false;
     config.Password.RequireUppercase = false;
 })
-    .AddEntityFrameworkStores<PCStoreDbContext>();
+    .AddEntityFrameworkStores<PCStoreDbContext>().AddDefaultTokenProviders();
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+    .AddJwtBearer(options =>
+    {
+        options.SaveToken = true;
+        options.RequireHttpsMetadata=false;
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
+        {
+            ValidateIssuer = true,
+            ValidateAudience=true,
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+        };
+    });
 
 builder.Services.ConfigureApplicationCookie(config => {
     config.LoginPath = "/Admin/Login";

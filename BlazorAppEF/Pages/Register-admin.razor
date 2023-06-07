@@ -1,0 +1,113 @@
+﻿@page "/register-admin"
+@using BlazorAppEF.Models
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.IdentityModel.JsonWebTokens
+@using Microsoft.IdentityModel.Tokens
+@using PCStoreEF.Entities
+@using System.Security.Claims
+@using System.Text
+@using System.IdentityModel.Tokens.Jwt
+@using System.ComponentModel.DataAnnotations
+@inject UserManager<User> UserManager
+@inject RoleManager<Role> RoleManager
+@inject IConfiguration Configuration
+@inject IJSRuntime JsRuntime
+@inject NavigationManager navManager
+
+<div class="row">
+    <div class="col-lg-4 offset-lg-4 pt-4 pb-4 border">
+        <div class="mb-3 text-center">
+            <h3>Register-admin</h3>
+        </div>
+        <div class="mb-3">
+            <label>User Name</label>
+            <input @bind="model.UserName" class="form-control" placeholder="User Name"/>
+        </div>
+        <div class="mb-3">
+            <label>Password</label>
+            <input @bind="model.Password" class="form-control" placeholder="Password"/>
+        </div>
+        <div class="mb-3">
+            <label>Email</label>
+            <input @bind="model.Email" class="form-control" placeholder="Email"/>
+        </div>
+        <div class="mb-3">
+            <label>PhoneNumber</label>
+            <input @bind="model.PhoneNumber" class="form-control" placeholder="PhoneNumber"/>
+        </div>
+        <div class="mb-3">
+            <label>FirstName</label>
+            <input @bind="model.FirstName" class="form-control" placeholder="FirstName"/>
+        </div>
+        <div class="mb-3">
+            <label>LastName</label>
+            <input @bind="model.LastName" class="form-control" placeholder="LastName"/>
+        </div>
+        <div class="mb-3">
+            <label>Father</label>
+            <input @bind="model.Father" class="form-control" placeholder="Father"/>
+        </div>
+        <div class="mb-3 d-grid gap-2">
+            <button @onclick="Registrate" class="btn btn-primary">Register</button>
+        </div>
+    </div>
+</div>
+
+@code {
+    private class RegisterModel
+    {
+        [Required(ErrorMessage = "UserName is required")]
+        public string? UserName { get; set; }
+        [Required(ErrorMessage = "Password is required")]
+        public string? Password { get; set; }
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress]
+        public string? Email { get; set; }
+        [Phone]
+        [Required(ErrorMessage = "PhoneNumber is required")]
+        public string? PhoneNumber { get; set; }
+        [Required(ErrorMessage = "FirstName is required")]
+        public string? FirstName { get; set; }
+        [Required(ErrorMessage = "LastName is required")]
+        public string? LastName { get; set; }
+        public string? Father { get; set; }
+    }
+    private RegisterModel model = new RegisterModel();
+    public async Task Registrate()
+    {
+        var userExists = await UserManager.FindByNameAsync(model.UserName);
+        if (userExists != null)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "User already exist!");
+        }
+        var user = new User()
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Father = model.Father,
+                Email = model.Email,
+                PhoneNumber = model.PhoneNumber,
+                UserName = model.UserName,
+                SecurityStamp = Guid.NewGuid().ToString()
+            };
+        var result = await UserManager.CreateAsync(user, model.Password);
+        if (!result.Succeeded)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "User creating error!");
+        }
+        if (!await RoleManager.RoleExistsAsync(UserRoles.Admin))
+            await RoleManager.CreateAsync(new Role(UserRoles.Admin));
+        if (!await RoleManager.RoleExistsAsync(UserRoles.User))
+            await RoleManager.CreateAsync(new Role(UserRoles.User));
+        if (await RoleManager.RoleExistsAsync(UserRoles.Admin))
+        {
+            await UserManager.AddToRoleAsync(user, UserRoles.Admin);
+        }
+        if (await RoleManager.RoleExistsAsync(UserRoles.User))
+        {
+            await UserManager.AddToRoleAsync(user, UserRoles.User);
+        }
+        await JsRuntime.InvokeVoidAsync("alert", "User created!");
+        navManager.NavigateTo("/", true);
+    }
+}

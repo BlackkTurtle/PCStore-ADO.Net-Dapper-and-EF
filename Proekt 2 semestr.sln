@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF PCStore.API", "EF PCStor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCStoreBLL", "PCStoreBLL\PCStoreBLL.csproj", "{6792988A-77CB-4C27-AE49-5CD5971AB48F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCStoreEF.BLL", "PCStoreEF.BLL\PCStoreEF.BLL.csproj", "{3BB3994A-6080-4AE1-BFDD-2E9B55646626}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCStoreEF.BLL", "PCStoreEF.BLL\PCStoreEF.BLL.csproj", "{3BB3994A-6080-4AE1-BFDD-2E9B55646626}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorAppEF", "BlazorAppEF\BlazorAppEF.csproj", "{5DD39573-A60D-4CDB-B7C4-F943CF697F23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{3BB3994A-6080-4AE1-BFDD-2E9B55646626}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BB3994A-6080-4AE1-BFDD-2E9B55646626}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BB3994A-6080-4AE1-BFDD-2E9B55646626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DD39573-A60D-4CDB-B7C4-F943CF697F23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DD39573-A60D-4CDB-B7C4-F943CF697F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DD39573-A60D-4CDB-B7C4-F943CF697F23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DD39573-A60D-4CDB-B7C4-F943CF697F23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

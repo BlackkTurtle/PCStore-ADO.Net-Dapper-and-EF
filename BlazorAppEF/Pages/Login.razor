@@ -1,0 +1,83 @@
+﻿@page "/login"
+@using BlazorAppEF.Models
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.IdentityModel.JsonWebTokens
+@using Microsoft.IdentityModel.Tokens
+@using PCStoreEF.Entities
+@using System.Security.Claims
+@using System.Text
+@using System.IdentityModel.Tokens.Jwt
+@using System.ComponentModel.DataAnnotations
+@inject UserManager<User> UserManager
+@inject IConfiguration Configuration
+@inject IJSRuntime JsRuntime
+@inject NavigationManager navManager
+
+<div class="row">
+    <div class="col-lg-4 offset-lg-4 pt-4 pb-4 border">
+        <div class="mb-3 text-center">
+            <h3>LOGIN</h3>
+        </div>
+        <div class="mb-3">
+            <label>User Name</label>
+            <input @bind="model.UserName" class="form-control" placeholder="User Name"/>
+        </div>
+        <div class="mb-3">
+            <label>Password</label>
+            <input @bind="model.Password" class="form-control" placeholder="Password"/>
+        </div>
+        <div class="mb-3 d-grid gap-2">
+            <button @onclick="Authenticate" class="btn btn-primary">Login</button>
+        </div>
+    </div>
+</div>
+
+@code {
+    private class LoginModel
+    {
+        [Required(ErrorMessage = "UserName is required")]
+        public string? UserName { get; set; }
+        [Required(ErrorMessage = "Password is required")]
+        public string? Password { get; set; }
+    }
+    private LoginModel model=new LoginModel();
+    public async Task Authenticate()
+    {
+        var user = await UserManager.FindByNameAsync(model.UserName);
+        if (user != null && await UserManager.CheckPasswordAsync(user, model.Password))
+        {
+            var userRoles = await UserManager.GetRolesAsync(user);
+            var authClaims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, model.UserName),
+                    new Claim(Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString())
+                };
+            foreach (var userRole in userRoles)
+            {
+                authClaims.Add(new Claim(ClaimTypes.Role, userRole));
+            }
+            var token = GetToken(authClaims);
+
+            var result=new
+            {
+                token = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler().WriteToken(token),
+                expiration = token.ValidTo
+            };
+            await JsRuntime.InvokeVoidAsync("alert", $"Login succesfull! your token:{result.token} and expiration date:{result.expiration}.");
+            navManager.NavigateTo("/", true);
+        }
+        await JsRuntime.InvokeVoidAsync("alert", "Error while logining!");
+    }
+    private JwtSecurityToken GetToken(List<Claim> authclaims)
+        {
+            var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]));
+            var token = new JwtSecurityToken(
+                issuer: Configuration["Jwt:Issuer"],
+                audience: Configuration["Jwt:Audience"],
+                expires: DateTime.Now.AddHours(3),
+                claims: authclaims,
+                signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
+                );
+            return token;
+        }
+}
